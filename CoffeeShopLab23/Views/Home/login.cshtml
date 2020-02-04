@@ -1,0 +1,69 @@
+﻿
+@{
+    ViewData["Title"] = "login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>login</h1>
+
+
+
+<form asp-controller="Home" asp-action="Shop" onsubmit="return Validate()">
+    <div class="form-group">
+        <label>UserName</label>
+        <input type="text" class="form-control" id="username" name="username" required />
+    </div>
+
+    <div class="form-group">
+        <label>ConfUserName</label>
+        <input type="text" class="form-control" id="confusername" name="confusername" required />
+    </div>
+
+    <div class="form-group">
+        <label>Password</label>
+        <input type="text" class="form-control" name="password" />
+    </div>
+    <input type="submit" value="Submit" />
+</form>
+
+
+<script>
+    //function called on form submit, controls whether form gets submitted
+    function Validate() {
+        //
+        console.log("Validate function");
+        //
+        var username = document.querySelector("#username").value;
+        // var name = document.querySelector("username")
+        console.log(username);
+
+        var confusername = document.querySelector("#confusername").value;
+        console.log(confusername);
+
+        if (username === confusername) {
+            console.log("true");
+
+            //var password = document.querySelector("#password").value;
+            //if (password == Modal.password && username == username) {
+            //    return true;
+            //}
+            //else {
+            //    document.write("Try again please. your passwored is wrong");
+            //    console.log("false");
+            //    return false;
+
+            //}
+
+        }
+        else {
+            document.write("Try again please. your username is wrong");
+            console.log("false");
+            return false;
+        }
+
+    }
+</script>
+
+
+<a href="/Home/Register">New User Registration Now</a>
+

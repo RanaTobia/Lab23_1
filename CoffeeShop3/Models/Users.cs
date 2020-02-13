@@ -5,6 +5,11 @@ namespace CoffeeShopLab23.Models
 {
     public partial class Users
     {
+        public Users()
+        {
+            UserItem = new HashSet<UserItem>();
+        }
+
         public int Id { get; set; }
         public string UserName { get; set; }
         public string Email { get; set; }
@@ -14,5 +19,7 @@ namespace CoffeeShopLab23.Models
         public string Gender { get; set; }
         public string Counrty { get; set; }
         public double Funds { get; set; }
+
+        public virtual ICollection<UserItem> UserItem { get; set; }
     }
 }
